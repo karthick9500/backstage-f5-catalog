@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: orders-f5-lb
+  description: F5 VIP for Orders service
+  tags:
+    - f5
+    - loadbalancer
+spec:
+  type: f5-loadbalancer
+  owner: team-orders      # must be a valid Group/User entity
+  system: orders-system   # optional: System this LB belongs to
+  dependencyOf:
+    - component:default/orders-service  # the service that uses this LB
+  parameters:
+    vip: 10.0.0.10
+    port: 443
+    protocol: https
+    poolName: orders-pool
+    f5Partition: Common
+    f5Url: https://f5-mgmt.example.com
