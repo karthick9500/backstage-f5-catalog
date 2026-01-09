@@ -1,11 +1,11 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: artist-lookup-999
+  name: lb-artist-lookup-999
   description: Artist Lookup 
   tags:
-    - java
-    - data
+    - us-west
+    - us-east
   links:
     - url: https://example.com/user
       title: Examples Userssssssssss
@@ -35,6 +35,6 @@ spec:
   type: service
   lifecycle: experimental
   owner: team-a
-  system: artist-engagement-portal
+  system: edc
   dependsOn: ['resource:artists-db']
   apiConsumedBy: ['component:www-artist']
