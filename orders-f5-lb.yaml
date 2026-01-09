@@ -9,9 +9,9 @@ metadata:
 spec:
   type: f5-loadbalancer
   owner: guests      # must be a valid Group/User entity
-  system: orders-system   # optional: System this LB belongs to
+  system: examples   # optional: System this LB belongs to
   dependencyOf:
-    - component:default/orders-service  # the service that uses this LB
+    - component:default/artist-lookup  # the service that uses this LB
   parameters:
     vip: 10.0.0.10
     port: 443
